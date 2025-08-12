@@ -1,0 +1,130 @@
+default:
+  All_num_layers: 2
+  embedding_hidden: 128
+  MLP_hidden: 128
+  epochs: 100
+  dropout: 0.5
+  lr: 1.0e-3
+  wd: 0
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0.1 # gamma 是重构损失的权重
+  sample_ratio: 0.1 # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+RHG_10:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-2
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+RHG_3:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-2
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+IMDB_dir_form:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-2
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+IMDB_dir_genre:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-2
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+stream_player:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-3
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值
+
+twitter_friend:
+  All_num_layers: 1
+  embedding_hidden: 64
+  MLP_hidden: 64
+  epochs: 200
+  dropout: 0.2
+  lr: 1.0e-3
+  wd: 0
+  pooling: "max"
+  early_stop: true
+
+  activation: "relu"
+  neg_slope: 0.01
+
+  gamma: 0 # gamma 是重构损失的权重
+  sample_ratio: false # 关联矩阵的采样行数，降低重建损失的内存消耗
+  weight_init: 1  # weight_init 模型卷积层参数初始化方式
+  pos_weight_thresh: 1.0e4 # pos_weight 超过 inf 的时候的最大取值

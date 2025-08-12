@@ -1,0 +1,187 @@
+default:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 128
+  epochs: 100
+  dropout: 0.5
+  lr: 1.0e-3 # 科学计数法表示用浮点数
+  wd: 0.0
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 128
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+    - 3 
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+cora:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 128
+  epochs: 80
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 10
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 128
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+pubmed:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 60
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 10
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+coauthor_cora:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 60
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 10
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+coauthor_dblp:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 40
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 10
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 128
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+actor:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 50
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 10
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+amazon:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 50
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+twitch:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 50
+  dropout: 0.5
+  lr: 1.0e-3 # 科学计数法表示用浮点数
+  wd: 0.0
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+pokec:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 80
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+  aggr_mode: 'max' # aggr_mode
+  display_step: 1
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+german:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 128
+  epochs: 50
+  dropout: 0.7
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.01
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
+
+bail:
+  All_num_layers: 1 # 通常情况下设置为1,伴随着Mlist设置为一个数值，增加层数可能会显著提升效果，但是计算速度太慢
+  embedding_hidden: 128
+  MLP_hidden: 256
+  epochs: 50
+  dropout: 0.5
+  lr: 1.0e-2 # 科学计数法表示用浮点数
+  wd: 0.0
+
+  hyperG_norm: false # whether normalize hypergraph adjacency tensor\
+  hid_dim: 256
+  M: 5 # the maximum cardinality of the hypergraph
+  Mlst: 
+    - 5 #'the maximum cardinality of the hypergraph at each layer, max(Mlst) = M' 数量要和层数All_num_layers相同
+  combine: "concat" # 'the combine operation in T-MPHN (e.g., concat, sum))'
