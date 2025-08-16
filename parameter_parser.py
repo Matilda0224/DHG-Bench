@@ -105,7 +105,12 @@ def parameter_parser():
     parser.add_argument('--task_type',default='node_cls',choices=['node_cls','edge_pred','hg_cls'])
     parser.add_argument('--is_default',default=False, help="use default params")
     parser.add_argument('--use_processed', default=True)
-    parser.add_argument('--method', default='HGNN') 
+    parser.add_argument('--method', default='HGNN',choices=['HGNN','HyperGCN','HCHA','HNHN',
+                                                            'AllSetformer','AllDeepSets','UniGIN',
+                                                            'LEGCN','HyperND','UniGCNII','EDHNN',
+                                                            'PlainUnigencoder','HJRL','SheafHyperGNN','EHNN',
+                                                            'TMPHN','PhenomNNS','PhenomNN','HyperGT',
+                                                            'DPHGNN','TFHNN','MLP']) 
     
     parser.add_argument('--device', default='cuda:0')
     parser.add_argument('--num_seeds', type=int, default=5)
