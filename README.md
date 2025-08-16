@@ -23,11 +23,94 @@ DHG-Bench is an open and unified pipline for Deep Hypergraph Learning (DHGL) bas
   <p align="center"><em>Figure 1: Pipeline of the DHG-Bench.</em></p>
 </div>
 
+DHG-Bench provides a fair and comprehensive platform to evaluate existing HNN algorithms and facilitate future DHGL research. Our main contributions are summarized as follows:
+
+* DHG-Bench enables a fair and unified comparison among 16 state-of-the-art HNN algorithms
+and 20 diverse hypergraph datasets covering node-level, edge-level, and graph-level tasks. To the
+best of our knowledge, this is the first comprehensive benchmark for deep hypergraph learning.
+
+* We conduct a systematic analysis of HNN methods from various dimensions, including effec-
+tiveness, efficiency, robustness, and fairness. Through extensive experiments, we reveal both the
+strengths and limitations of existing algorithms, offering valuable insights to inform and inspire
+future research in this field.
+
+* We release DHG-Bench, an easy-to-use open-source benchmark library to support future DHGL
+research. Besides, with our toolkit, users can readily evaluate their algorithms or datasets with
+less effort.
+
 ## <span id="installation">📦 Installation</span>
+
+Follow the steps below to install and configure **DHG-Bench** properly for your local environment.
+
+**Installation for Local Development:**
+
+``` bash
+git clone https://github.com/Coco-Hut/DHG-Bench.git 
+cd DHG-Bench
+```
+
+**Download Datasets**
+
+We include all benchmark datasets in the data.zip archive. Users can simply extract the archive with
+
+```bash
+unzip data.zip
+```
+to obtain the data directory. The project structure should look like the following:
+
+```bash
+DHG-Bench
+  ├── data
+  │   ├── fair_data
+  │   ├── hete_data
+  |   ├── hgcls_data
+  │   ├── trad_data
+  |   └── ...
+  └── dhgbench
+  └── main.py
+  └── parameter_parser.py
+   ```
+
+**Required Dependencies:**
+
+**DHG-Bench** needs the following requirements to be satisfied beforehand:
+
+* Python>=3.9.21
+* Pytorch>=2.2.2
+* torch_geometric>=2.6.1
+* torch-cluster>=1.6.3
+* torch-scatter>=2.1.2
+* torch-sparse>=0.6.18
+* torch-spline-conv>=1.2.2
+* deeprobust==0.2.11
+* ipdb==0.13.13
+* numpy==1.24.3
 
 ## <span id="quick-start">🚀 Quick Start</span>
 
-## <span id="quick-start">🧩 Algorithm References</span>
+The following commands show how to quickly run an existing HNN algorithm across different hypergraph tasks.
+
+For example, to run the HGNN method on the Cora dataset for a node classification task, use the following command:
+
+```bash
+python main.py --dname=cora --task_type=node_cls, --method=HGNN, --is_default=True
+```
+
+For example, to run the EDHNN method on the Pubmed dataset for a hyperedge prediction task, use the following command:
+
+```bash
+python main.py --dname=pubmed --task_type=edge_pred, --method=EDHNN, --is_default=True, --edge_batch_size=512 --e_embed_hidden=64 --e_embed_layer=2 --aggr_mode=maxmin --ns_method=mixed --edge_aggr=group
+```
+
+For example, to run the TFHNN method on the stream_player dataset for a hypergraph classification task, use the following command:
+
+```bash
+python main.py --dname=pubmed --task_type=hg_cls, --method=TFHNN, --is_default=True, --hg_batch_size=256 --pooling=mean --g_embed_hidden=128 --g_embed_layer=2
+```
+
+Note that The **is_default** parameter indicates whether to use the model’s default configuration. If set to False, the model will instead load parameter settings specific to the given dataset. All model parameter files are provided in the lib_yamls directory.
+
+## <span id="references">🧩 Algorithm References</span>
 
 | **ID** | **Method** | **Paper** |     **Venue**     |  
 | :----: | :----: | :----: |:----: |  
@@ -48,7 +131,7 @@ DHG-Bench is an open and unified pipline for Deep Hypergraph Learning (DHGL) bas
 |15|T-HyperGNNs |[T-HyperGNNs: Hypergraph Neural Networks via Tensor Representations](https://ieeexplore.ieee.org/document/10462516)| TNNLS 2024|
 |16|TF-HNN |[Training-Free Message Passing for Learning on Hypergraphs](https://openreview.net/pdf?id=4AuyYxt7A2)| ICLR 2025|
 
-## <span id="quick-start">📖 Algorithm References</span>
+## <span id="citation">📖 Citation</span>
 Our paper on this benchmark has be released!
 
 If you use our benchmark in your works, we would appreciate citations to the paper:
