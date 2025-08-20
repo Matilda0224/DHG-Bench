@@ -132,7 +132,7 @@ Note that The **is_default** parameter indicates whether to use the model’s de
 |16|TF-HNN |[Training-Free Message Passing for Learning on Hypergraphs](https://openreview.net/pdf?id=4AuyYxt7A2)| ICLR 2025|
 
 ## <span id="citation">📖 Citation</span>
-Our paper on this benchmark has be released!
+Our paper on this benchmark has be released at: http://arxiv.org/abs/2508.12244
 
 If you use our benchmark in your works, we would appreciate citations to the paper:
 
