@@ -137,5 +137,10 @@ Our paper on this benchmark has be released at: http://arxiv.org/abs/2508.12244
 If you use our benchmark in your works, we would appreciate citations to the paper:
 
 ```bibtex
-
+@article{li2025dhg,
+  title={DHG-Bench: A Comprehensive Benchmark on Deep Hypergraph Learning},
+  author={Li, Fan and Wang, Xiaoyang and Zhang, Wenjie and Zhang, Ying and Lin, Xuemin},
+  journal={arXiv preprint arXiv:2508.12244},
+  year={2025}
+}
 ```
