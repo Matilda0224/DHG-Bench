@@ -105,7 +105,7 @@ python main.py --dname=pubmed --task_type=edge_pred --method=EDHNN --is_default=
 For example, to run the TFHNN method on the stream_player dataset for a hypergraph classification task, use the following command:
 
 ```bash
-python main.py --dname=pubmed --task_type=hg_cls --method=TFHNN --is_default=True
+python main.py --dname=stream_player --task_type=hg_cls --method=TFHNN --is_default=True
 ```
 
 Note that The **is_default** parameter indicates whether to use the model’s default configuration. If set to False, the model will instead load parameter settings specific to the given dataset. All model parameter files are provided in the lib_yamls directory.
