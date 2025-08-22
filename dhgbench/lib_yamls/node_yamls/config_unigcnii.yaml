@@ -11,6 +11,7 @@ default:
   use_norm: False
   restart_alpha: 0.3
   lamda: 0.8
+  reduce: 'mean'
 
 cora:
   All_num_layers: 2
@@ -25,3 +26,4 @@ cora:
   use_norm: False
   restart_alpha: 0.3
   lamda: 0.8
+  reduce: 'mean'

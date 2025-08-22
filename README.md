@@ -93,19 +93,19 @@ The following commands show how to quickly run an existing HNN algorithm across 
 For example, to run the HGNN method on the Cora dataset for a node classification task, use the following command:
 
 ```bash
-python main.py --dname=cora --task_type=node_cls, --method=HGNN, --is_default=True
+python main.py --dname=cora --task_type=node_cls --method=HGNN --is_default=True
 ```
 
 For example, to run the EDHNN method on the Pubmed dataset for a hyperedge prediction task, use the following command:
 
 ```bash
-python main.py --dname=pubmed --task_type=edge_pred, --method=EDHNN, --is_default=True, --edge_batch_size=512 --e_embed_hidden=64 --e_embed_layer=2 --aggr_mode=maxmin --ns_method=mixed --edge_aggr=group
+python main.py --dname=pubmed --task_type=edge_pred --method=EDHNN --is_default=True
 ```
 
 For example, to run the TFHNN method on the stream_player dataset for a hypergraph classification task, use the following command:
 
 ```bash
-python main.py --dname=pubmed --task_type=hg_cls, --method=TFHNN, --is_default=True, --hg_batch_size=256 --pooling=mean --g_embed_hidden=128 --g_embed_layer=2
+python main.py --dname=pubmed --task_type=hg_cls --method=TFHNN --is_default=True
 ```
 
 Note that The **is_default** parameter indicates whether to use the model’s default configuration. If set to False, the model will instead load parameter settings specific to the given dataset. All model parameter files are provided in the lib_yamls directory.

@@ -109,7 +109,7 @@ def parameter_parser():
                                                             'AllSetformer','AllDeepSets','UniGIN',
                                                             'LEGCN','HyperND','UniGCNII','EDHNN',
                                                             'PlainUnigencoder','HJRL','SheafHyperGNN','EHNN',
-                                                            'TMPHN','PhenomNNS','PhenomNN','HyperGT',
+                                                            'TMPHN','PhenomNNS','PhenomNN',
                                                             'DPHGNN','TFHNN','MLP']) 
     
     parser.add_argument('--device', default='cuda:0')
@@ -134,8 +134,8 @@ def parameter_parser():
     parser.add_argument('--exclude_self', action='store_true')
     
     # Hyperedge Prediction
-    parser.add_argument('--edge_save_dir', action='store_true',default=f'./lib_edge_splits/')  
-    parser.add_argument('--edge_batch_size', action='store_true',default=512) 
+    parser.add_argument('--edge_save_dir', default=f'./lib_edge_splits/')  
+    parser.add_argument('--edge_batch_size', default=512) 
     parser.add_argument('--e_embed_hidden',default=64) 
     parser.add_argument('--e_embed_layer',default=2) 
     parser.add_argument('--e_embed_dropout',default=0.2) 
@@ -155,7 +155,7 @@ def parameter_parser():
     parser.add_argument('--early_stop',default=True)
 
     # Robustness
-    parser.add_argument('--is_perturbed',default=True) 
+    parser.add_argument('--is_perturbed',default=False) 
     parser.add_argument('--pert_mode',default='flip_label',choices=['spar_feat','noise_feat',
                                                                     'drop_incidence','add_incidence',
                                                                     'spar_label','flip_label'])
