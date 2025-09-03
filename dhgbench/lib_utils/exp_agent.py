@@ -7,7 +7,7 @@ from collections import defaultdict
 from lib_utils.utils import fix_seed,result_printer,mean_std_metrics
 from lib_utils.train_agent import Trainer
 from lib_utils.eval_agent import Evaluator
-from lib_models.HNN import HCHA,HyperGCN,HNHN,SetGNN,UniGNN,UniGCNII,LEGCN,HyperND,EquivSetGNN,PlainUnigencoder,HJRL,SheafHyperGNN,EHNN,TMPHN,PhenomNN,PhenomNNS,DPHGNN,TFHNN,PlainMLP
+from lib_models.HNN import HCHA,HyperGCN,HNHN,SetGNN,UniGNN,UniGCNII,LEGCN,HyperND,EquivSetGNN,PlainUnigencoder,HJRL,SheafHyperGNN,EHNN,TMPHN,PhenomNN,PhenomNNS,DPHGNN,TFHNN,PlainMLP,HyperGT
 
 from lib_dataset.data_perturbation import perturbation
 from lib_dataset.edge_loaders import generate_edge_loaders,generate_split_hyperedges
@@ -231,6 +231,8 @@ def parse_model(args, data):
         model = TFHNN(data.num_features,num_targets,args)
     elif args.method == 'MLP':
         model = PlainMLP(data.num_features,num_targets,args)
+    elif args.method == 'HyperGT':
+        model = HyperGT(data.num_features,num_targets,args)
     else:
         raise ValueError('Unimplemented model')
 
