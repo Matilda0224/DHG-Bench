@@ -40,7 +40,7 @@ class ExpAgent:
             if not os.path.exists(file_path):
                 generate_split_hyperedges(data,self.args,seed)
                 
-            data_dict = torch.load(file_path)
+            data_dict = torch.load(file_path, weights_only=False)
             
             batch_loaders = generate_edge_loaders(data_dict,self.args)
             
